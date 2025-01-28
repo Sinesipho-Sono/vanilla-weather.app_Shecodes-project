@@ -1,0 +1,17 @@
+body {
+  font-family: "Alegreya", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #ded3d9;
+}
+.first-h1 {
+  text-align: center;
+}
+.weather-app {
+  background-color: #ffffff;
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 30px;
+  box-shadow: 0 30px 50px rgba(170, 163, 187, 0.863);
+  border-radius: 5px;
+}
