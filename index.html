@@ -12,18 +12,19 @@
       href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
-    <script src="src/index.js"></script>
+
     <title>Vanilla weather app</title>
   </head>
   <body>
     <h1 class="first-h1">Weather forecast</h1>
     <div class="weather-app">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
+            id="search-form-input"
             class="search-input"
           />
           <input type="submit" class="search-submit-button" value="search" />
@@ -32,7 +33,7 @@
       <main>
         <div class="weather-data">
           <div>
-            <h1 class="weather-app-city">Cape Town</h1>
+            <h1 class="weather-app-city" id="city">Cape Town</h1>
             <p class="weather-app-details">
               Tuesday 11:22, sunny
               <br />
@@ -64,5 +65,6 @@
         >
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
