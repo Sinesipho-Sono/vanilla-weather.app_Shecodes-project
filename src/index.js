@@ -9,17 +9,17 @@ function getWeather(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#weather-app-icon");
 
-  iconElement.innerHTML = `<img
-      src="${response.data.condition.icon_url} "
-      class="weather-app-icon"
-    />`;
-
   city.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = ` ${response.data.temperature.humidity}% `;
   speedElement.innerHTML = `${response.data.wind.speed}km/h`;
+  iconElement.innerHTML = `<img
+      src="${response.data.condition.icon_url} "
+      class="weather-app-icon"
+    />`;
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -53,10 +53,12 @@ function changeCityName(event) {
   searchCity(searchInput.value);
 }
 
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", changeCityName);
-
-function displayForecast() {
+function getForecast(city) {
+  let apiKey2 = "dfc8b6f54adt4d38bbe0o47364a63d82";
+  let apiUrl2 = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey2}units=metric`;
+  axios.get(apiUrl2).then(displayForecast);
+}
+function displayForecast(response) {
   let forecastDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHtml = "";
@@ -76,8 +78,13 @@ function displayForecast() {
     </div>
   </div>`;
   });
+
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", changeCityName);
 searchCity("Cape Town");
+getForecast("Cape Town");
 displayForecast();
