@@ -2,7 +2,7 @@ body {
   font-family: "Alegreya", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background-color: #ded3d9;
+  background-color: #f1e6ec;
 }
 .first-h1 {
   text-align: center;
@@ -13,5 +13,26 @@ body {
   margin: 60px auto;
   padding: 30px;
   box-shadow: 0 30px 50px rgba(170, 163, 187, 0.863);
+  border-radius: 8px;
+}
+
+header {
+  border-bottom: 1px solid #f1e6ec;
+  padding: 0 0 30px;
+}
+.search-input {
+  background-color: #f1e6ec;
+  border: none;
   border-radius: 5px;
+  width: 80%;
+  padding: 12px 30px;
+}
+
+.search-submit-button {
+  background-color: #bb799d;
+  border-color: #f1e6ec;
+  margin-left: 3px;
+  padding: 12px 30px;
+  border-radius: 15px;
+  color: #ffffff;
 }
