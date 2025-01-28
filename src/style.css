@@ -37,6 +37,15 @@ header {
   border-radius: 15px;
   color: #ffffff;
 }
+
+.search-submit-button:hover {
+  background-color: #791b4d;
+}
+
+.search-submit-button:active {
+  transform: scale(0.95);
+  background-color: #4d1332;
+}
 main {
   padding: 20px 0;
 }
@@ -86,6 +95,7 @@ main {
   justify-content: space-around;
   margin-top: 30px;
 }
+
 .weather-forecast-date {
   text-align: center;
   color: #5e5c5d;
